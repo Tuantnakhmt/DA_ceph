@@ -1,0 +1,35 @@
+[2025-01-14T06:54:23.961+0000] {processor.py:186} INFO - Started process (PID=158) to work on /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:54:23.963+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2025-01-14T06:54:23.967+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:54:23.965+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:54:29.015+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:54:29.161+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:54:29.160+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-14T06:54:29.199+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:54:29.199+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2025-01-14 07:00:00+00:00, run_after=2025-01-14 08:00:00+00:00
+[2025-01-14T06:54:29.226+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 5.286 seconds
+[2025-01-14T06:54:59.439+0000] {processor.py:186} INFO - Started process (PID=237) to work on /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:54:59.441+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2025-01-14T06:54:59.446+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:54:59.446+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:55:00.908+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:55:01.013+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:55:01.012+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-14T06:55:01.037+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:55:01.036+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2025-01-14 07:00:00+00:00, run_after=2025-01-14 08:00:00+00:00
+[2025-01-14T06:55:01.059+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.628 seconds
+[2025-01-14T06:55:31.453+0000] {processor.py:186} INFO - Started process (PID=277) to work on /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:55:31.454+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2025-01-14T06:55:31.456+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:55:31.456+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:55:33.188+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:55:33.294+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:55:33.293+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-14T06:55:33.315+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:55:33.315+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2025-01-14 07:00:00+00:00, run_after=2025-01-14 08:00:00+00:00
+[2025-01-14T06:55:33.333+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.886 seconds
+[2025-01-14T06:56:03.657+0000] {processor.py:186} INFO - Started process (PID=317) to work on /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:56:03.659+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2025-01-14T06:56:03.661+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:56:03.660+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:56:05.301+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:56:05.584+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:56:05.583+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-14T06:56:05.626+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:56:05.626+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2025-01-14 07:00:00+00:00, run_after=2025-01-14 08:00:00+00:00
+[2025-01-14T06:56:05.653+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 2.005 seconds
+[2025-01-14T06:56:36.103+0000] {processor.py:186} INFO - Started process (PID=357) to work on /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:56:36.104+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2025-01-14T06:56:36.107+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:56:36.106+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:56:37.735+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2025-01-14T06:56:37.890+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:56:37.889+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-14T06:56:37.920+0000] {logging_mixin.py:190} INFO - [2025-01-14T06:56:37.919+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2025-01-14 07:00:00+00:00, run_after=2025-01-14 08:00:00+00:00
+[2025-01-14T06:56:37.947+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.853 seconds

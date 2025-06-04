@@ -1,0 +1,631 @@
+[2024-12-28T12:03:22.086+0000] {processor.py:186} INFO - Started process (PID=155) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:03:22.089+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:03:22.092+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:03:22.091+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:03:52.108+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:03:52.107+0000] {timeout.py:68} ERROR - Process timed out, PID: 155
+[2024-12-28T12:03:52.127+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:03:52.114+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/app/dags/train_xgboost_pipeline.py", line 664, in <module>
+    import evidently
+ModuleNotFoundError: No module named 'evidently'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 666, in <module>
+    install_package("evidently==0.4.16")
+  File "/app/dags/train_xgboost_pipeline.py", line 653, in install_package
+    subprocess.check_call(["pip", "install", package_name])
+  File "/usr/local/lib/python3.10/subprocess.py", line 364, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "/usr/local/lib/python3.10/subprocess.py", line 347, in call
+    return p.wait(timeout=timeout)
+  File "/usr/local/lib/python3.10/subprocess.py", line 1209, in wait
+    return self._wait(timeout=timeout)
+  File "/usr/local/lib/python3.10/subprocess.py", line 1959, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/usr/local/lib/python3.10/subprocess.py", line 1917, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /app/dags/train_xgboost_pipeline.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.10.4/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.10.4/best-practices.html#reducing-dag-complexity, PID: 155
+[2024-12-28T12:03:52.129+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:03:52.148+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 30.072 seconds
+[2024-12-28T12:04:22.560+0000] {processor.py:186} INFO - Started process (PID=201) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:04:22.561+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:04:22.563+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:04:22.562+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:04:52.573+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:04:52.572+0000] {timeout.py:68} ERROR - Process timed out, PID: 201
+[2024-12-28T12:04:52.590+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:04:52.580+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/app/dags/train_xgboost_pipeline.py", line 664, in <module>
+    import evidently
+ModuleNotFoundError: No module named 'evidently'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 666, in <module>
+    install_package("evidently==0.4.16")
+  File "/app/dags/train_xgboost_pipeline.py", line 653, in install_package
+    subprocess.check_call(["pip", "install", package_name])
+  File "/usr/local/lib/python3.10/subprocess.py", line 364, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "/usr/local/lib/python3.10/subprocess.py", line 347, in call
+    return p.wait(timeout=timeout)
+  File "/usr/local/lib/python3.10/subprocess.py", line 1209, in wait
+    return self._wait(timeout=timeout)
+  File "/usr/local/lib/python3.10/subprocess.py", line 1959, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/usr/local/lib/python3.10/subprocess.py", line 1917, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /app/dags/train_xgboost_pipeline.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.10.4/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.10.4/best-practices.html#reducing-dag-complexity, PID: 201
+[2024-12-28T12:04:52.591+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:04:52.609+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 30.058 seconds
+[2024-12-28T12:05:23.031+0000] {processor.py:186} INFO - Started process (PID=225) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:05:23.034+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:05:23.047+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:05:23.046+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:05:35.868+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:05:35.859+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/app/dags/train_xgboost_pipeline.py", line 664, in <module>
+    import evidently
+ModuleNotFoundError: No module named 'evidently'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 667, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:05:35.869+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:05:35.883+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 12.874 seconds
+[2024-12-28T12:06:06.358+0000] {processor.py:186} INFO - Started process (PID=250) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:06:06.359+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:06:06.361+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:06:06.361+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:06:07.592+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:06:07.769+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:06:07.768+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:06:07.794+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:06:07.794+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:06:07.831+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.484 seconds
+[2024-12-28T12:06:38.250+0000] {processor.py:186} INFO - Started process (PID=294) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:06:38.252+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:06:38.253+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:06:38.253+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:06:39.916+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:06:40.031+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:06:40.031+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:06:40.056+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:06:40.055+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:06:40.078+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.839 seconds
+[2024-12-28T12:07:10.390+0000] {processor.py:186} INFO - Started process (PID=314) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:07:10.392+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:07:10.393+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:07:10.393+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:07:11.714+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:07:11.823+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:07:11.823+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:07:11.845+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:07:11.845+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:07:11.867+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.487 seconds
+[2024-12-28T12:07:42.250+0000] {processor.py:186} INFO - Started process (PID=334) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:07:42.251+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:07:42.253+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:07:42.252+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:07:43.524+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:07:43.638+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:07:43.637+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:07:43.663+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:07:43.662+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:07:43.689+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.449 seconds
+[2024-12-28T12:08:14.101+0000] {processor.py:186} INFO - Started process (PID=354) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:08:14.102+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:08:14.104+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:08:14.104+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:08:15.566+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:08:15.678+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:08:15.678+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:08:15.705+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:08:15.705+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:08:15.731+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.641 seconds
+[2024-12-28T12:08:45.950+0000] {processor.py:186} INFO - Started process (PID=374) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:08:45.951+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:08:45.952+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:08:45.952+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:08:47.236+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:08:47.339+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:08:47.338+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:08:47.360+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:08:47.360+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:08:47.383+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.444 seconds
+[2024-12-28T12:09:06.379+0000] {processor.py:186} INFO - Started process (PID=394) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:09:06.381+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:09:06.383+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:09:06.382+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:09:07.872+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:09:07.861+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 762, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:09:07.873+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:09:07.891+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.523 seconds
+[2024-12-28T12:09:38.135+0000] {processor.py:186} INFO - Started process (PID=414) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:09:38.136+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:09:38.138+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:09:38.138+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:09:39.484+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:09:39.475+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 762, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:09:39.485+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:09:39.510+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.385 seconds
+[2024-12-28T12:10:09.977+0000] {processor.py:186} INFO - Started process (PID=434) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:10:09.978+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:10:09.980+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:10:09.979+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:10:11.370+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:10:11.360+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 762, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:10:11.370+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:10:11.396+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.429 seconds
+[2024-12-28T12:10:41.640+0000] {processor.py:186} INFO - Started process (PID=454) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:10:41.641+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:10:41.645+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:10:41.645+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:10:43.148+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:10:43.141+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 762, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:10:43.149+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:10:43.165+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.543 seconds
+[2024-12-28T12:11:13.620+0000] {processor.py:186} INFO - Started process (PID=474) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:11:13.621+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:11:13.623+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:11:13.622+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:11:14.854+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:11:14.844+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 762, in <module>
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:11:14.855+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:11:14.873+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.263 seconds
+[2024-12-28T12:11:39.051+0000] {processor.py:186} INFO - Started process (PID=494) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:11:39.053+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:11:39.054+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:11:39.054+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:11:40.252+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:11:40.245+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:11:40.253+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:11:40.267+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.226 seconds
+[2024-12-28T12:12:10.579+0000] {processor.py:186} INFO - Started process (PID=514) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:12:10.580+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:12:10.582+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:12:10.581+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:12:11.765+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:12:11.755+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:12:11.766+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:12:11.782+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.213 seconds
+[2024-12-28T12:12:25.906+0000] {processor.py:186} INFO - Started process (PID=534) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:12:25.908+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:12:25.909+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:12:25.909+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:12:27.224+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:12:27.215+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:12:27.225+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:12:27.242+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.347 seconds
+[2024-12-28T12:12:57.450+0000] {processor.py:186} INFO - Started process (PID=556) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:12:57.451+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:12:57.453+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:12:57.452+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:12:58.744+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:12:58.737+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:12:58.745+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:12:58.761+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.321 seconds
+[2024-12-28T12:13:28.876+0000] {processor.py:186} INFO - Started process (PID=576) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:13:28.877+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:13:28.879+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:13:28.879+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:13:30.146+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:13:30.138+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:13:30.147+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:13:30.163+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.298 seconds
+[2024-12-28T12:14:00.622+0000] {processor.py:186} INFO - Started process (PID=596) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:14:00.623+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:14:00.624+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:14:00.624+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:14:01.926+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:14:01.917+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:14:01.927+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:14:01.946+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.333 seconds
+[2024-12-28T12:14:05.049+0000] {processor.py:186} INFO - Started process (PID=616) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:14:05.050+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:14:05.052+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:14:05.052+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:14:06.279+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:14:06.269+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:14:06.280+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:14:06.298+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.259 seconds
+[2024-12-28T12:14:36.415+0000] {processor.py:186} INFO - Started process (PID=636) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:14:36.416+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:14:36.418+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:14:36.417+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:14:37.592+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:14:37.582+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:14:37.593+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:14:37.609+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.204 seconds
+[2024-12-28T12:15:08.166+0000] {processor.py:186} INFO - Started process (PID=656) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:15:08.167+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:15:08.169+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:15:08.168+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:15:09.544+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:15:09.536+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:15:09.545+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:15:09.561+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.404 seconds
+[2024-12-28T12:15:39.880+0000] {processor.py:186} INFO - Started process (PID=676) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:15:39.882+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:15:39.883+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:15:39.883+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:15:41.095+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:15:41.084+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:15:41.096+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:15:41.113+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.243 seconds
+[2024-12-28T12:16:10.261+0000] {processor.py:186} INFO - Started process (PID=155) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:16:10.263+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:16:10.264+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:16:10.264+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:16:11.909+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:16:11.897+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:16:11.910+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:16:11.924+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.670 seconds
+[2024-12-28T12:16:42.479+0000] {processor.py:186} INFO - Started process (PID=181) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:16:42.481+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:16:42.484+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:16:42.483+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:16:43.727+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:16:43.721+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:16:43.728+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:16:43.744+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.272 seconds
+[2024-12-28T12:17:14.057+0000] {processor.py:186} INFO - Started process (PID=201) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:17:14.058+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:17:14.061+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:17:14.060+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:17:15.304+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:17:15.294+0000] {dagbag.py:387} ERROR - Failed to import: /app/dags/train_xgboost_pipeline.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/app/dags/train_xgboost_pipeline.py", line 763, in <module>
+    from evidently.report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/usr/local/lib/python3.10/site-packages/evidently/report/report.py", line 14, in <module>
+    from evidently.base_metric import GenericInputData
+  File "/usr/local/lib/python3.10/site-packages/evidently/base_metric.py", line 21, in <module>
+    from evidently.core import BaseResult
+  File "/usr/local/lib/python3.10/site-packages/evidently/core.py", line 88, in <module>
+    @pydantic_type_validator(np.float_)
+  File "/usr/local/lib/python3.10/site-packages/numpy/__init__.py", line 400, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+[2024-12-28T12:17:15.305+0000] {processor.py:927} WARNING - No viable dags retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:17:15.322+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.272 seconds
+[2024-12-28T12:17:26.283+0000] {processor.py:186} INFO - Started process (PID=221) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:17:26.284+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:17:26.287+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:17:26.286+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:17:27.467+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:17:27.576+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:17:27.575+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:17:27.598+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:17:27.598+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:17:27.641+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.365 seconds
+[2024-12-28T12:17:57.998+0000] {processor.py:186} INFO - Started process (PID=241) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:17:57.999+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:17:58.002+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:17:58.001+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:17:59.221+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:17:59.339+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:17:59.339+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:17:59.362+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:17:59.361+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:17:59.382+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.392 seconds
+[2024-12-28T12:18:29.432+0000] {processor.py:186} INFO - Started process (PID=261) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:18:29.433+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:18:29.435+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:18:29.435+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:18:30.556+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:18:30.653+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:18:30.652+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:18:30.673+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:18:30.673+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:18:30.690+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.268 seconds
+[2024-12-28T12:19:01.017+0000] {processor.py:186} INFO - Started process (PID=281) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:19:01.018+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:19:01.023+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:19:01.022+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:19:02.350+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:19:02.467+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:19:02.466+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:19:02.491+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:19:02.491+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:19:02.512+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.501 seconds
+[2024-12-28T12:19:32.966+0000] {processor.py:186} INFO - Started process (PID=383) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:19:32.967+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:19:32.969+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:19:32.969+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:19:34.134+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:19:34.236+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:19:34.236+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:19:34.257+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:19:34.257+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:19:34.277+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.319 seconds
+[2024-12-28T12:20:04.525+0000] {processor.py:186} INFO - Started process (PID=403) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:20:04.527+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:20:04.532+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:20:04.531+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:20:06.011+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:20:06.151+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:20:06.150+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:20:06.173+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:20:06.173+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:20:06.192+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.675 seconds
+[2024-12-28T12:20:36.680+0000] {processor.py:186} INFO - Started process (PID=423) to work on /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:20:36.681+0000] {processor.py:914} INFO - Processing file /app/dags/train_xgboost_pipeline.py for tasks to queue
+[2024-12-28T12:20:36.683+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:20:36.683+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:20:37.894+0000] {processor.py:925} INFO - DAG(s) 'xgboost_drift_pipeline' retrieved from /app/dags/train_xgboost_pipeline.py
+[2024-12-28T12:20:38.000+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:20:38.000+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-12-28T12:20:38.022+0000] {logging_mixin.py:190} INFO - [2024-12-28T12:20:38.021+0000] {dag.py:4180} INFO - Setting next_dagrun for xgboost_drift_pipeline to 2024-12-28 13:00:00+00:00, run_after=2024-12-28 14:00:00+00:00
+[2024-12-28T12:20:38.042+0000] {processor.py:208} INFO - Processing /app/dags/train_xgboost_pipeline.py took 1.368 seconds

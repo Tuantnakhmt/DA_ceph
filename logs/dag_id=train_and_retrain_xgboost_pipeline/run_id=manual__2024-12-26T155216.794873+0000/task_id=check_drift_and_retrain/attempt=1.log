@@ -1,0 +1,118 @@
+[2024-12-26T15:52:25.112+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-26T15:52:25.131+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_and_retrain_xgboost_pipeline.check_drift_and_retrain manual__2024-12-26T15:52:16.794873+00:00 [queued]>
+[2024-12-26T15:52:25.140+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_and_retrain_xgboost_pipeline.check_drift_and_retrain manual__2024-12-26T15:52:16.794873+00:00 [queued]>
+[2024-12-26T15:52:25.142+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2024-12-26T15:52:25.160+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): check_drift_and_retrain> on 2024-12-26 15:52:16.794873+00:00
+[2024-12-26T15:52:25.168+0000] {standard_task_runner.py:72} INFO - Started process 333 to run task
+[2024-12-26T15:52:25.172+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'train_and_retrain_xgboost_pipeline', 'check_drift_and_retrain', 'manual__2024-12-26T15:52:16.794873+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/train_xgboost_pipeline.py', '--cfg-path', '/tmp/tmphp48h_j3']
+[2024-12-26T15:52:25.176+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask check_drift_and_retrain
+[2024-12-26T15:52:25.194+0000] {logging_mixin.py:190} WARNING - /usr/local/lib/python3.10/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-12-26T15:52:25.238+0000] {task_command.py:467} INFO - Running <TaskInstance: train_and_retrain_xgboost_pipeline.check_drift_and_retrain manual__2024-12-26T15:52:16.794873+00:00 [running]> on host 42dc6dafdabb
+[2024-12-26T15:52:25.333+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='train_and_retrain_xgboost_pipeline' AIRFLOW_CTX_TASK_ID='check_drift_and_retrain' AIRFLOW_CTX_EXECUTION_DATE='2024-12-26T15:52:16.794873+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-26T15:52:16.794873+00:00'
+[2024-12-26T15:52:25.335+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-26T15:52:25.353+0000] {train_xgboost_pipeline.py:388} INFO - Starting drift detection and retraining if necessary...
+[2024-12-26T15:52:25.449+0000] {train_xgboost_pipeline.py:313} INFO - Downloaded data/Ingestion/Financial_with_Sentiment.csv from MinIO to /tmp/Financial_with_Sentiment.csv
+[2024-12-26T15:52:25.579+0000] {train_xgboost_pipeline.py:313} INFO - Downloaded data/Ingestion/Financial_with_Sentiment_pseudo.csv from MinIO to /tmp/Financial_with_Sentiment_pseudo.csv
+[2024-12-26T15:52:25.986+0000] {logging_mixin.py:190} WARNING - /app/dags/train_xgboost_pipeline.py:399 DtypeWarning: Columns (2161) have mixed types. Specify dtype option on import or set low_memory=False.
+[2024-12-26T15:52:26.781+0000] {logging_mixin.py:190} WARNING - /app/dags/train_xgboost_pipeline.py:400 DtypeWarning: Columns (2161) have mixed types. Specify dtype option on import or set low_memory=False.
+[2024-12-26T15:52:29.690+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/app/dags/train_xgboost_pipeline.py", line 414, in check_drift_and_retrain
+    reference_X_scaled = scaler.fit_transform(reference_X)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/base.py", line 918, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/preprocessing/_data.py", line 894, in fit
+    return self.partial_fit(X, y, sample_weight)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/preprocessing/_data.py", line 930, in partial_fit
+    X = validate_data(
+  File "/usr/local/lib/python3.10/site-packages/sklearn/utils/validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/utils/validation.py", line 1055, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/utils/_array_api.py", line 832, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/usr/local/lib/python3.10/site-packages/pandas/core/generic.py", line 2153, in __array__
+    arr = np.asarray(values, dtype=dtype)
+ValueError: could not convert string to float: 'AAA'
+[2024-12-26T15:52:29.774+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=train_and_retrain_xgboost_pipeline, task_id=check_drift_and_retrain, run_id=manual__2024-12-26T15:52:16.794873+00:00, execution_date=20241226T155216, start_date=20241226T155225, end_date=20241226T155229
+[2024-12-26T15:52:29.799+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-26T15:52:29.801+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 5 for task check_drift_and_retrain (could not convert string to float: 'AAA'; 333)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/usr/local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/usr/local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/usr/local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/app/dags/train_xgboost_pipeline.py", line 414, in check_drift_and_retrain
+    reference_X_scaled = scaler.fit_transform(reference_X)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/base.py", line 918, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/preprocessing/_data.py", line 894, in fit
+    return self.partial_fit(X, y, sample_weight)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/preprocessing/_data.py", line 930, in partial_fit
+    X = validate_data(
+  File "/usr/local/lib/python3.10/site-packages/sklearn/utils/validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/utils/validation.py", line 1055, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/usr/local/lib/python3.10/site-packages/sklearn/utils/_array_api.py", line 832, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/usr/local/lib/python3.10/site-packages/pandas/core/generic.py", line 2153, in __array__
+    arr = np.asarray(values, dtype=dtype)
+ValueError: could not convert string to float: 'AAA'
+[2024-12-26T15:52:29.846+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-12-26T15:52:29.893+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-26T15:52:29.896+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,24 @@
+[2025-01-16T03:09:16.006+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-16T03:09:16.059+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_xgboost_pipeline.train_xgboost_model scheduled__2025-01-14T07:00:00+00:00 [queued]>
+[2025-01-16T03:09:16.080+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_xgboost_pipeline.train_xgboost_model scheduled__2025-01-14T07:00:00+00:00 [queued]>
+[2025-01-16T03:09:16.081+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-16T03:09:16.232+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): train_xgboost_model> on 2025-01-14 07:00:00+00:00
+[2025-01-16T03:09:16.251+0000] {standard_task_runner.py:72} INFO - Started process 229 to run task
+[2025-01-16T03:09:16.266+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'train_xgboost_pipeline', 'train_xgboost_model', 'scheduled__2025-01-14T07:00:00+00:00', '--job-id', '77', '--raw', '--subdir', 'DAGS_FOLDER/train_part.py', '--cfg-path', '/tmp/tmpn4_2bch2']
+[2025-01-16T03:09:16.278+0000] {standard_task_runner.py:105} INFO - Job 77: Subtask train_xgboost_model
+[2025-01-16T03:09:16.343+0000] {logging_mixin.py:190} WARNING - /usr/local/lib/python3.10/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-01-16T03:09:16.464+0000] {task_command.py:467} INFO - Running <TaskInstance: train_xgboost_pipeline.train_xgboost_model scheduled__2025-01-14T07:00:00+00:00 [running]> on host 42dc6dafdabb
+[2025-01-16T03:09:16.469+0000] {logging_mixin.py:190} WARNING - /usr/local/lib/python3.10/site-packages/***/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-01-16T03:09:16.967+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='train_xgboost_pipeline' AIRFLOW_CTX_TASK_ID='train_xgboost_model' AIRFLOW_CTX_EXECUTION_DATE='2025-01-14T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-14T07:00:00+00:00'
+[2025-01-16T03:09:16.971+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-16T03:09:17.233+0000] {train_part.py:42} INFO - Starting XGBoost model training...
+[2025-01-16T03:09:17.569+0000] {train_part.py:31} INFO - Downloaded data/Ingestion/Financial_with_Sentiment_1.csv from MinIO to /tmp/Financial_with_Sentiment_1.csv
+[2025-01-16T03:10:19.422+0000] {train_part.py:36} INFO - Uploaded /tmp/output/predictions_1.csv to MinIO at data/Ingestion/predictions_1.csv
+[2025-01-16T03:10:19.482+0000] {train_part.py:36} INFO - Uploaded /tmp/output/metrics_1.txt to MinIO at data/Ingestion/metrics_1.txt
+[2025-01-16T03:10:19.547+0000] {train_part.py:36} INFO - Uploaded /tmp/output/feature_importance_1.csv to MinIO at data/Ingestion/feature_importance_1.csv
+[2025-01-16T03:10:19.549+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-16T03:10:19.567+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-16T03:10:19.568+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=train_xgboost_pipeline, task_id=train_xgboost_model, run_id=scheduled__2025-01-14T07:00:00+00:00, execution_date=20250114T070000, start_date=20250116T030916, end_date=20250116T031019
+[2025-01-16T03:10:19.642+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-16T03:10:19.668+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-16T03:10:19.671+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

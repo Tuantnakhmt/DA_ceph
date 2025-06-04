@@ -1,0 +1,334 @@
+version: '3.7'
+
+services:
+  crawler:
+    build: .
+    container_name: crawler
+    environment:
+      - DATA_BASE_PATH=/app/data
+      - INGESTION_PATH=/app/data/Ingestion
+      - REMOTE_SELENIUM_URL=http://selenium:4444/wd/hub
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=crawled-data
+    command: python crawl_close.py
+    depends_on:
+      selenium:
+        condition: service_healthy
+      minio:
+        condition: service_started
+    volumes:
+      - ./List_company.csv:/app/List_company.csv  # Mount the file
+    networks:
+      - shared_network
+
+  selenium:
+    image: selenium/standalone-chrome:131.0.6778.108-chromedriver-131.0.6778.87
+    container_name: selenium_container_da2
+    ports:
+      - "4444:4444"
+    environment:
+      - JAVA_OPTS=-Dotel.javaagent.enabled=false -Dotel.traces.exporter=none
+      - SE_SESSION_REQUEST_TIMEOUT=1200
+      - SE_SESSION_RETRY_INTERVAL=30
+      - SE_NODE_MAX_SESSIONS=5
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+    shm_size: "4g"
+    deploy:
+      resources:
+        limits:
+          cpus: "4"
+          memory: "6g"
+        reservations:
+          cpus: "2"
+          memory: "4g"
+    networks:
+      - shared_network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:4444/wd/hub/status || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  minio:
+    image: minio/minio
+    container_name: minio
+    command: server --console-address ":9001" /data
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "9000:9000"  # S3 API
+      - "9001:9001"  # WebUI
+    volumes:
+      - ./minio/data:/data
+    networks:
+      - shared_network
+
+  streamlit_crawler:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    container_name: streamlit_crawler
+    command: streamlit run streamlit_app.py --server.port 8501 --server.address 0.0.0.0
+    depends_on:
+      - minio
+    environment:
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=crawled-data
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./streamlit_app.py:/app/streamlit_app.py
+    networks:
+      - shared_network
+
+  transform_app:
+    build: .
+    container_name: transform_app
+    environment:
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=crawled-data
+    command: python transform_app.py
+    volumes:
+      - .:/app
+      - ./data:/app/data
+    networks:
+      - shared_network
+
+  # New Streamlit App for Financial Visualization
+  streamlit_financial:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    container_name: streamlit_financial
+    command: streamlit run streamlit_app_compare.py --server.port 8502 --server.address 0.0.0.0
+    environment:
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=crawled-data
+      - FINANCIAL_FILE_PATH=data/Ingestion/Compare/Financial_Year.xlsx
+    ports:
+      - "8502:8502"
+    depends_on:
+      - minio
+    volumes:
+      - ./streamlit_app_compare.py:/app/streamlit_app_compare.py
+    networks:
+      - shared_network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    command: ["mongod", "--bind_ip", "0.0.0.0"]
+    volumes:
+      - ./mongo_data:/data/db
+    networks:
+      - shared_network
+  
+  cafe_news_app:
+    build: .
+    container_name: cafe_news_app
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=crawled-data
+    volumes:
+      - ./data:/app/data
+      - ./news_crawl.py:/app/news_crawl.py
+      - ./VAR_GLOBAL_CONFIG_1.py:/app/VAR_GLOBAL_CONFIG_1.py
+    depends_on:
+      - mongodb
+      - minio
+    command: ["python", "news_crawl.py"]
+    networks:
+      - shared_network
+
+  streamlit_news_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    container_name: streamlit_news_app
+    command: streamlit run streamlit_news_app.py --server.port 8503 --server.address 0.0.0.0
+    environment:
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=crawled-data
+    ports:
+      - "8503:8503"
+    depends_on:
+      - minio
+    volumes:
+      - ./streamlit_news_app.py:/app/streamlit_news_app.py
+    networks:
+      - shared_network
+
+  evidently_analysis:
+    build: .
+    container_name: evidently_analysis
+    environment:
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=crawled-data
+    volumes:
+      - ./evidently_analysis.py:/app/evidently_analysis.py
+    command: ["python", "/app/evidently_analysis.py"]
+    depends_on:
+      - minio
+    networks:
+      - shared_network
+
+  airflow_postgres:
+    image: postgres:13
+    container_name: airflow_postgres
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - shared_network
+
+  # airflow_app:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.airflow
+  #   container_name: airflow_app
+  #   environment:
+  #     - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+  #     - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow_postgres:5432/airflow
+  #     - AIRFLOW__CORE__DAGS_FOLDER=/app/dags
+  #     - AIRFLOW__CORE__LOAD_EXAMPLES=False
+  #     - AIRFLOW_HOME=/app
+  #     - MINIO_ENDPOINT=http://minio:9000
+  #     - MINIO_ACCESS_KEY=minioadmin
+  #     - MINIO_SECRET_KEY=minioadmin
+  #     - MINIO_BUCKET=crawled-data
+  #   volumes:
+  #     - ./airflow_dags:/app/dags
+  #     - ./logs:/app/logs
+  #     - ./output:/app/output
+  #   ports:
+  #     - "8080:8080"
+  #   networks:
+  #     - shared_network
+  #   depends_on:
+  #     - airflow_postgres
+  #     - minio
+  #   command: ["sh", "-c", "airflow db upgrade && airflow webserver -p 8080 & airflow scheduler"]
+
+  airflow-init-2:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    container_name: airflow-init-2
+    entrypoint: ["sh", "-c", "airflow db init"]
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow_postgres:5432/airflow
+      - AIRFLOW__CORE__DAGS_FOLDER=/app/dags
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=crawled-data
+    depends_on:
+      - airflow_postgres
+      - minio
+    networks:
+      - shared_network
+    volumes:
+      - ./airflow_dags:/app
+
+  airflow_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    container_name: airflow_app
+    command: ["sh", "-c", "airflow scheduler & airflow webserver"]
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow_postgres:5432/airflow
+      - AIRFLOW__CORE__DAGS_FOLDER=/app/dags
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW_HOME=/app
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=crawled-data
+    ports:
+      - "8080:8080"
+    depends_on:
+      - airflow_postgres
+      - minio
+      - airflow-init-2
+    networks:
+      - shared_network
+    volumes:
+      - ./airflow_dags:/app/dags
+      - ./logs:/app/logs
+      - ./output:/app/output
+
+  streamlit_prediction_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    container_name: streamlit_prediction_app
+    command: streamlit run streamlit_prediction_app.py --server.port 8504 --server.address 0.0.0.0
+    environment:
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=crawled-data
+    ports:
+      - "8504:8504"
+    depends_on:
+      - minio
+    volumes:
+      - ./streamlit_prediction_app.py:/app/streamlit_prediction_app.py
+    networks:
+      - shared_network
+  
+  streamlit_update_data:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    container_name: streamlit_update_data
+    command: streamlit run streamlit_update_data.py --server.port 8505 --server.address 0.0.0.0
+    environment:
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=crawled-data
+    ports:
+      - "8505:8505"
+    depends_on:
+      - minio
+    volumes:
+      - ./streamlit_update_data.py:/app/streamlit_update_data.py
+    networks:
+      - shared_network
+
+volumes:
+  postgres_data:
+
+networks:
+  shared_network:
+    driver: bridge

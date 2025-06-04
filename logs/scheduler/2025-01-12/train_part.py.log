@@ -1,0 +1,66 @@
+[2025-01-12T17:31:38.599+0000] {processor.py:186} INFO - Started process (PID=155) to work on /app/dags/train_part.py
+[2025-01-12T17:31:38.601+0000] {processor.py:914} INFO - Processing file /app/dags/train_part.py for tasks to queue
+[2025-01-12T17:31:38.607+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:31:38.607+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_part.py
+[2025-01-12T17:31:44.611+0000] {processor.py:925} INFO - DAG(s) 'train_xgboost_pipeline' retrieved from /app/dags/train_part.py
+[2025-01-12T17:31:44.834+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:31:44.834+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-12T17:31:44.920+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:31:44.920+0000] {dag.py:4180} INFO - Setting next_dagrun for train_xgboost_pipeline to 2025-01-12 18:00:00+00:00, run_after=2025-01-12 19:00:00+00:00
+[2025-01-12T17:31:44.958+0000] {processor.py:208} INFO - Processing /app/dags/train_part.py took 6.371 seconds
+[2025-01-12T17:32:15.122+0000] {processor.py:186} INFO - Started process (PID=267) to work on /app/dags/train_part.py
+[2025-01-12T17:32:15.123+0000] {processor.py:914} INFO - Processing file /app/dags/train_part.py for tasks to queue
+[2025-01-12T17:32:15.130+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:32:15.128+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_part.py
+[2025-01-12T17:32:16.535+0000] {processor.py:925} INFO - DAG(s) 'train_xgboost_pipeline' retrieved from /app/dags/train_part.py
+[2025-01-12T17:32:16.645+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:32:16.644+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-12T17:32:16.675+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:32:16.674+0000] {dag.py:4180} INFO - Setting next_dagrun for train_xgboost_pipeline to 2025-01-12 18:00:00+00:00, run_after=2025-01-12 19:00:00+00:00
+[2025-01-12T17:32:16.695+0000] {processor.py:208} INFO - Processing /app/dags/train_part.py took 1.585 seconds
+[2025-01-12T17:32:46.920+0000] {processor.py:186} INFO - Started process (PID=307) to work on /app/dags/train_part.py
+[2025-01-12T17:32:46.922+0000] {processor.py:914} INFO - Processing file /app/dags/train_part.py for tasks to queue
+[2025-01-12T17:32:46.924+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:32:46.924+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_part.py
+[2025-01-12T17:32:48.406+0000] {processor.py:925} INFO - DAG(s) 'train_xgboost_pipeline' retrieved from /app/dags/train_part.py
+[2025-01-12T17:32:48.523+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:32:48.523+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-12T17:32:48.550+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:32:48.549+0000] {dag.py:4180} INFO - Setting next_dagrun for train_xgboost_pipeline to 2025-01-12 18:00:00+00:00, run_after=2025-01-12 19:00:00+00:00
+[2025-01-12T17:32:48.574+0000] {processor.py:208} INFO - Processing /app/dags/train_part.py took 1.660 seconds
+[2025-01-12T17:33:18.971+0000] {processor.py:186} INFO - Started process (PID=347) to work on /app/dags/train_part.py
+[2025-01-12T17:33:18.973+0000] {processor.py:914} INFO - Processing file /app/dags/train_part.py for tasks to queue
+[2025-01-12T17:33:18.975+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:33:18.975+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_part.py
+[2025-01-12T17:33:20.402+0000] {processor.py:925} INFO - DAG(s) 'train_xgboost_pipeline' retrieved from /app/dags/train_part.py
+[2025-01-12T17:33:20.505+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:33:20.505+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-12T17:33:20.526+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:33:20.526+0000] {dag.py:4180} INFO - Setting next_dagrun for train_xgboost_pipeline to 2025-01-12 18:00:00+00:00, run_after=2025-01-12 19:00:00+00:00
+[2025-01-12T17:33:20.546+0000] {processor.py:208} INFO - Processing /app/dags/train_part.py took 1.583 seconds
+[2025-01-12T17:34:22.017+0000] {processor.py:186} INFO - Started process (PID=155) to work on /app/dags/train_part.py
+[2025-01-12T17:34:22.019+0000] {processor.py:914} INFO - Processing file /app/dags/train_part.py for tasks to queue
+[2025-01-12T17:34:22.025+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:34:22.024+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_part.py
+[2025-01-12T17:34:24.255+0000] {processor.py:925} INFO - DAG(s) 'train_xgboost_pipeline' retrieved from /app/dags/train_part.py
+[2025-01-12T17:34:24.430+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:34:24.429+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-12T17:34:24.487+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:34:24.487+0000] {dag.py:4180} INFO - Setting next_dagrun for train_xgboost_pipeline to 2025-01-12 18:00:00+00:00, run_after=2025-01-12 19:00:00+00:00
+[2025-01-12T17:34:24.524+0000] {processor.py:208} INFO - Processing /app/dags/train_part.py took 2.514 seconds
+[2025-01-12T17:34:54.985+0000] {processor.py:186} INFO - Started process (PID=197) to work on /app/dags/train_part.py
+[2025-01-12T17:34:54.986+0000] {processor.py:914} INFO - Processing file /app/dags/train_part.py for tasks to queue
+[2025-01-12T17:34:54.989+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:34:54.988+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_part.py
+[2025-01-12T17:34:56.352+0000] {processor.py:925} INFO - DAG(s) 'train_xgboost_pipeline' retrieved from /app/dags/train_part.py
+[2025-01-12T17:34:56.457+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:34:56.457+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-12T17:34:56.480+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:34:56.480+0000] {dag.py:4180} INFO - Setting next_dagrun for train_xgboost_pipeline to 2025-01-12 18:00:00+00:00, run_after=2025-01-12 19:00:00+00:00
+[2025-01-12T17:34:56.499+0000] {processor.py:208} INFO - Processing /app/dags/train_part.py took 1.523 seconds
+[2025-01-12T17:35:26.754+0000] {processor.py:186} INFO - Started process (PID=237) to work on /app/dags/train_part.py
+[2025-01-12T17:35:26.755+0000] {processor.py:914} INFO - Processing file /app/dags/train_part.py for tasks to queue
+[2025-01-12T17:35:26.758+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:35:26.758+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_part.py
+[2025-01-12T17:36:56.503+0000] {processor.py:186} INFO - Started process (PID=161) to work on /app/dags/train_part.py
+[2025-01-12T17:36:56.504+0000] {processor.py:914} INFO - Processing file /app/dags/train_part.py for tasks to queue
+[2025-01-12T17:36:56.509+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:36:56.507+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_part.py
+[2025-01-12T17:36:58.373+0000] {processor.py:925} INFO - DAG(s) 'train_xgboost_pipeline' retrieved from /app/dags/train_part.py
+[2025-01-12T17:36:58.498+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:36:58.498+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-12T17:36:58.532+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:36:58.532+0000] {dag.py:4180} INFO - Setting next_dagrun for train_xgboost_pipeline to 2025-01-12 18:00:00+00:00, run_after=2025-01-12 19:00:00+00:00
+[2025-01-12T17:36:58.555+0000] {processor.py:208} INFO - Processing /app/dags/train_part.py took 2.061 seconds
+[2025-01-12T17:37:29.107+0000] {processor.py:186} INFO - Started process (PID=207) to work on /app/dags/train_part.py
+[2025-01-12T17:37:29.109+0000] {processor.py:914} INFO - Processing file /app/dags/train_part.py for tasks to queue
+[2025-01-12T17:37:29.113+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:37:29.113+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_part.py
+[2025-01-12T17:37:31.080+0000] {processor.py:925} INFO - DAG(s) 'train_xgboost_pipeline' retrieved from /app/dags/train_part.py
+[2025-01-12T17:37:31.194+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:37:31.193+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-12T17:37:31.216+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:37:31.216+0000] {dag.py:4180} INFO - Setting next_dagrun for train_xgboost_pipeline to 2025-01-12 18:00:00+00:00, run_after=2025-01-12 19:00:00+00:00
+[2025-01-12T17:37:31.235+0000] {processor.py:208} INFO - Processing /app/dags/train_part.py took 2.137 seconds
+[2025-01-12T17:38:01.650+0000] {processor.py:186} INFO - Started process (PID=247) to work on /app/dags/train_part.py
+[2025-01-12T17:38:01.652+0000] {processor.py:914} INFO - Processing file /app/dags/train_part.py for tasks to queue
+[2025-01-12T17:38:01.662+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:38:01.661+0000] {dagbag.py:588} INFO - Filling up the DagBag from /app/dags/train_part.py
+[2025-01-12T17:38:03.909+0000] {processor.py:925} INFO - DAG(s) 'train_xgboost_pipeline' retrieved from /app/dags/train_part.py
+[2025-01-12T17:38:04.349+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:38:04.347+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-12T17:38:04.471+0000] {logging_mixin.py:190} INFO - [2025-01-12T17:38:04.471+0000] {dag.py:4180} INFO - Setting next_dagrun for train_xgboost_pipeline to 2025-01-12 18:00:00+00:00, run_after=2025-01-12 19:00:00+00:00
+[2025-01-12T17:38:04.519+0000] {processor.py:208} INFO - Processing /app/dags/train_part.py took 2.884 seconds

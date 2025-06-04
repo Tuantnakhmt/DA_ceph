@@ -1,0 +1,6 @@
+pandas
+streamlit
+matplotlib
+boto3
+openpyxl
+vaderSentiment

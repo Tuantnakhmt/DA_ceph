@@ -1,0 +1,25 @@
+[2024-12-26T16:01:00.814+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-26T16:01:00.833+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_and_retrain_xgboost_pipeline.train_xgboost_model manual__2024-12-26T16:00:58.371900+00:00 [queued]>
+[2024-12-26T16:01:00.843+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_and_retrain_xgboost_pipeline.train_xgboost_model manual__2024-12-26T16:00:58.371900+00:00 [queued]>
+[2024-12-26T16:01:00.844+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2024-12-26T16:01:00.860+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): train_xgboost_model> on 2024-12-26 16:00:58.371900+00:00
+[2024-12-26T16:01:00.865+0000] {standard_task_runner.py:72} INFO - Started process 828 to run task
+[2024-12-26T16:01:00.869+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'train_and_retrain_xgboost_pipeline', 'train_xgboost_model', 'manual__2024-12-26T16:00:58.371900+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/train_xgboost_pipeline.py', '--cfg-path', '/tmp/tmputpbo3ds']
+[2024-12-26T16:01:00.872+0000] {standard_task_runner.py:105} INFO - Job 10: Subtask train_xgboost_model
+[2024-12-26T16:01:00.888+0000] {logging_mixin.py:190} WARNING - /usr/local/lib/python3.10/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-12-26T16:01:00.943+0000] {task_command.py:467} INFO - Running <TaskInstance: train_and_retrain_xgboost_pipeline.train_xgboost_model manual__2024-12-26T16:00:58.371900+00:00 [running]> on host 42dc6dafdabb
+[2024-12-26T16:01:01.039+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='train_and_retrain_xgboost_pipeline' AIRFLOW_CTX_TASK_ID='train_xgboost_model' AIRFLOW_CTX_EXECUTION_DATE='2024-12-26T16:00:58.371900+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-26T16:00:58.371900+00:00'
+[2024-12-26T16:01:01.041+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-26T16:01:01.062+0000] {train_xgboost_pipeline.py:321} INFO - Starting XGBoost model training...
+[2024-12-26T16:01:01.166+0000] {train_xgboost_pipeline.py:313} INFO - Downloaded data/Ingestion/Financial_with_Sentiment.csv from MinIO to /tmp/Financial_with_Sentiment.csv
+[2024-12-26T16:01:01.583+0000] {logging_mixin.py:190} WARNING - /app/dags/train_xgboost_pipeline.py:328 DtypeWarning: Columns (2161) have mixed types. Specify dtype option on import or set low_memory=False.
+[2024-12-26T16:01:03.405+0000] {train_xgboost_pipeline.py:364} INFO - Model Evaluation - MSE: 148.72, R2: 0.24
+[2024-12-26T16:01:03.456+0000] {train_xgboost_pipeline.py:318} INFO - Uploaded /tmp/output/predictions.csv to MinIO at data/Ingestion/predictions.csv
+[2024-12-26T16:01:03.497+0000] {train_xgboost_pipeline.py:318} INFO - Uploaded /tmp/output/metrics.txt to MinIO at data/Ingestion/metrics.txt
+[2024-12-26T16:01:03.497+0000] {train_xgboost_pipeline.py:385} INFO - Training process completed successfully.
+[2024-12-26T16:01:03.499+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-26T16:01:03.509+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-26T16:01:03.510+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=train_and_retrain_xgboost_pipeline, task_id=train_xgboost_model, run_id=manual__2024-12-26T16:00:58.371900+00:00, execution_date=20241226T160058, start_date=20241226T160100, end_date=20241226T160103
+[2024-12-26T16:01:03.534+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-26T16:01:03.555+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-26T16:01:03.558+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

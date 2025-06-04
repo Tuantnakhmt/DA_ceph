@@ -1,0 +1,33 @@
+[2025-01-12T16:47:38.559+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-12T16:47:38.579+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: xgboost_drift_pipeline.test_prediction_after_retrain manual__2025-01-12T16:47:28.881013+00:00 [queued]>
+[2025-01-12T16:47:38.592+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: xgboost_drift_pipeline.test_prediction_after_retrain manual__2025-01-12T16:47:28.881013+00:00 [queued]>
+[2025-01-12T16:47:38.594+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-12T16:47:38.610+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): test_prediction_after_retrain> on 2025-01-12 16:47:28.881013+00:00
+[2025-01-12T16:47:38.617+0000] {standard_task_runner.py:72} INFO - Started process 250 to run task
+[2025-01-12T16:47:38.622+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'xgboost_drift_pipeline', 'test_prediction_after_retrain', 'manual__2025-01-12T16:47:28.881013+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/train_xgboost_pipeline.py', '--cfg-path', '/tmp/tmpwcgqqxu8']
+[2025-01-12T16:47:38.626+0000] {standard_task_runner.py:105} INFO - Job 64: Subtask test_prediction_after_retrain
+[2025-01-12T16:47:38.648+0000] {logging_mixin.py:190} WARNING - /usr/local/lib/python3.10/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-01-12T16:47:38.695+0000] {task_command.py:467} INFO - Running <TaskInstance: xgboost_drift_pipeline.test_prediction_after_retrain manual__2025-01-12T16:47:28.881013+00:00 [running]> on host 42dc6dafdabb
+[2025-01-12T16:47:38.794+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='xgboost_drift_pipeline' AIRFLOW_CTX_TASK_ID='test_prediction_after_retrain' AIRFLOW_CTX_EXECUTION_DATE='2025-01-12T16:47:28.881013+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-12T16:47:28.881013+00:00'
+[2025-01-12T16:47:38.796+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-12T16:47:38.812+0000] {train_xgboost_pipeline.py:837} INFO - Testing prediction on current data...
+[2025-01-12T16:47:38.844+0000] {train_xgboost_pipeline.py:674} INFO - Downloaded data/Ingestion/Financial_with_Sentiment_pseudo.csv from MinIO to /tmp/Financial_with_Sentiment_pseudo.csv
+[2025-01-12T16:47:38.865+0000] {train_xgboost_pipeline.py:674} INFO - Downloaded data/Ingestion/retrained_model_test.pkl from MinIO to /tmp/retrained_model_test.pkl
+[2025-01-12T16:47:38.898+0000] {logging_mixin.py:190} WARNING - /app/dags/train_xgboost_pipeline.py:694 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2025-01-12T16:47:38.913+0000] {logging_mixin.py:190} WARNING - /app/dags/train_xgboost_pipeline.py:694 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2025-01-12T16:47:38.925+0000] {train_xgboost_pipeline.py:865} INFO - Test Prediction Evaluation - MSE: 512.52, R2: 0.65
+[2025-01-12T16:47:38.926+0000] {logging_mixin.py:190} INFO - Test Prediction Metrics:
+MSE: 512.52
+R2: 0.65
+[2025-01-12T16:47:38.928+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-12T16:47:38.939+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-12T16:47:38.940+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=xgboost_drift_pipeline, task_id=test_prediction_after_retrain, run_id=manual__2025-01-12T16:47:28.881013+00:00, execution_date=20250112T164728, start_date=20250112T164738, end_date=20250112T164738
+[2025-01-12T16:47:39.000+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-12T16:47:39.024+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-12T16:47:39.028+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

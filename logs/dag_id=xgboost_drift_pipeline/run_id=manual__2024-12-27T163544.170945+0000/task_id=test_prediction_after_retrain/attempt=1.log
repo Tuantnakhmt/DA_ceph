@@ -1,0 +1,34 @@
+[2024-12-27T16:35:56.428+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-27T16:35:56.447+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: xgboost_drift_pipeline.test_prediction_after_retrain manual__2024-12-27T16:35:44.170945+00:00 [queued]>
+[2024-12-27T16:35:56.456+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: xgboost_drift_pipeline.test_prediction_after_retrain manual__2024-12-27T16:35:44.170945+00:00 [queued]>
+[2024-12-27T16:35:56.458+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2024-12-27T16:35:56.473+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): test_prediction_after_retrain> on 2024-12-27 16:35:44.170945+00:00
+[2024-12-27T16:35:56.480+0000] {standard_task_runner.py:72} INFO - Started process 2538 to run task
+[2024-12-27T16:35:56.483+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'xgboost_drift_pipeline', 'test_prediction_after_retrain', 'manual__2024-12-27T16:35:44.170945+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/train_xgboost_pipeline.py', '--cfg-path', '/tmp/tmpkzajgkdj']
+[2024-12-27T16:35:56.486+0000] {standard_task_runner.py:105} INFO - Job 37: Subtask test_prediction_after_retrain
+[2024-12-27T16:35:56.504+0000] {logging_mixin.py:190} WARNING - /usr/local/lib/python3.10/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-12-27T16:35:56.551+0000] {task_command.py:467} INFO - Running <TaskInstance: xgboost_drift_pipeline.test_prediction_after_retrain manual__2024-12-27T16:35:44.170945+00:00 [running]> on host 42dc6dafdabb
+[2024-12-27T16:35:56.659+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='xgboost_drift_pipeline' AIRFLOW_CTX_TASK_ID='test_prediction_after_retrain' AIRFLOW_CTX_EXECUTION_DATE='2024-12-27T16:35:44.170945+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-27T16:35:44.170945+00:00'
+[2024-12-27T16:35:56.663+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-27T16:35:56.679+0000] {train_xgboost_pipeline.py:767} INFO - Testing prediction on current data...
+[2024-12-27T16:35:56.770+0000] {train_xgboost_pipeline.py:665} INFO - Downloaded data/Ingestion/Financial_with_Sentiment_pseudo.csv from MinIO to /tmp/Financial_with_Sentiment_pseudo.csv
+[2024-12-27T16:35:56.793+0000] {train_xgboost_pipeline.py:665} INFO - Downloaded data/Ingestion/retrained_model.pkl from MinIO to /tmp/retrained_model.pkl
+[2024-12-27T16:35:57.182+0000] {logging_mixin.py:190} WARNING - /app/dags/train_xgboost_pipeline.py:780 DtypeWarning: Columns (2161) have mixed types. Specify dtype option on import or set low_memory=False.
+[2024-12-27T16:35:57.269+0000] {logging_mixin.py:190} WARNING - /app/dags/train_xgboost_pipeline.py:685 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2024-12-27T16:35:58.805+0000] {logging_mixin.py:190} WARNING - /app/dags/train_xgboost_pipeline.py:685 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2024-12-27T16:35:58.825+0000] {train_xgboost_pipeline.py:793} INFO - Test Prediction Evaluation - MSE: 43.94, R2: 0.78
+[2024-12-27T16:35:58.827+0000] {logging_mixin.py:190} INFO - Test Prediction Metrics:
+MSE: 43.94
+R2: 0.78
+[2024-12-27T16:35:58.828+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-27T16:35:58.837+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-27T16:35:58.838+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=xgboost_drift_pipeline, task_id=test_prediction_after_retrain, run_id=manual__2024-12-27T16:35:44.170945+00:00, execution_date=20241227T163544, start_date=20241227T163556, end_date=20241227T163558
+[2024-12-27T16:35:58.870+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-27T16:35:58.889+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-27T16:35:58.893+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

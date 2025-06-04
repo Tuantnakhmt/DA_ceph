@@ -1,0 +1,27 @@
+[2025-01-12T17:31:47.454+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-12T17:31:47.478+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_xgboost_pipeline.train_xgboost_model scheduled__2024-12-26T14:00:00+00:00 [queued]>
+[2025-01-12T17:31:47.493+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_xgboost_pipeline.train_xgboost_model scheduled__2024-12-26T14:00:00+00:00 [queued]>
+[2025-01-12T17:31:47.494+0000] {taskinstance.py:2866} INFO - Starting attempt 2 of 2
+[2025-01-12T17:31:47.510+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): train_xgboost_model> on 2024-12-26 14:00:00+00:00
+[2025-01-12T17:31:47.531+0000] {standard_task_runner.py:72} INFO - Started process 231 to run task
+[2025-01-12T17:31:47.536+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'train_xgboost_pipeline', 'train_xgboost_model', 'scheduled__2024-12-26T14:00:00+00:00', '--job-id', '70', '--raw', '--subdir', 'DAGS_FOLDER/train_part.py', '--cfg-path', '/tmp/tmp2msu5s41']
+[2025-01-12T17:31:47.540+0000] {standard_task_runner.py:105} INFO - Job 70: Subtask train_xgboost_model
+[2025-01-12T17:31:47.560+0000] {logging_mixin.py:190} WARNING - /usr/local/lib/python3.10/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-01-12T17:31:47.605+0000] {task_command.py:467} INFO - Running <TaskInstance: train_xgboost_pipeline.train_xgboost_model scheduled__2024-12-26T14:00:00+00:00 [running]> on host 42dc6dafdabb
+[2025-01-12T17:31:47.608+0000] {logging_mixin.py:190} WARNING - /usr/local/lib/python3.10/site-packages/***/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-01-12T17:31:47.715+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='train_xgboost_pipeline' AIRFLOW_CTX_TASK_ID='train_xgboost_model' AIRFLOW_CTX_EXECUTION_DATE='2024-12-26T14:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-12-26T14:00:00+00:00'
+[2025-01-12T17:31:47.718+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-12T17:31:47.736+0000] {train_part.py:42} INFO - Starting XGBoost model training...
+[2025-01-12T17:31:48.070+0000] {train_part.py:31} INFO - Downloaded data/Ingestion/Financial_with_Sentiment.csv from MinIO to /tmp/Financial_with_Sentiment.csv
+[2025-01-12T17:31:48.541+0000] {logging_mixin.py:190} WARNING - /app/dags/train_part.py:49 DtypeWarning: Columns (2161) have mixed types. Specify dtype option on import or set low_memory=False.
+[2025-01-12T17:32:07.338+0000] {train_part.py:85} INFO - Model Evaluation - MSE: 148.72, R2: 0.24
+[2025-01-12T17:32:07.404+0000] {train_part.py:36} INFO - Uploaded /tmp/output/predictions.csv to MinIO at data/Ingestion/predictions.csv
+[2025-01-12T17:32:07.451+0000] {train_part.py:36} INFO - Uploaded /tmp/output/metrics.txt to MinIO at data/Ingestion/metrics.txt
+[2025-01-12T17:32:07.507+0000] {train_part.py:36} INFO - Uploaded /tmp/output/feature_importance.csv to MinIO at data/Ingestion/feature_importance.csv
+[2025-01-12T17:32:07.508+0000] {train_part.py:114} INFO - Training process completed successfully.
+[2025-01-12T17:32:07.510+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-12T17:32:07.523+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-12T17:32:07.524+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=train_xgboost_pipeline, task_id=train_xgboost_model, run_id=scheduled__2024-12-26T14:00:00+00:00, execution_date=20241226T140000, start_date=20250112T173147, end_date=20250112T173207
+[2025-01-12T17:32:07.572+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-12T17:32:07.590+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-12T17:32:07.592+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

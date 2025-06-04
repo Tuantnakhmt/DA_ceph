@@ -1,0 +1,21 @@
+# Use a lightweight Python image
+FROM python:3.10-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Install required dependencies for Airflow
+COPY airflow_dags/requirements_airflow.txt ./requirements_airflow.txt
+RUN apt-get update && apt-get install -y gcc libpq-dev && \
+    pip install --no-cache-dir -r requirements_airflow.txt && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Copy the DAGs folder into the container
+COPY airflow_dags/ ./dags
+
+# Expose the default Airflow port
+EXPOSE 8080
+
+# # Initialize Airflow database and start the scheduler and webserver
+# CMD ["sh", "-c", "airflow db upgrade && airflow webserver -p 8080 & airflow scheduler"]
+

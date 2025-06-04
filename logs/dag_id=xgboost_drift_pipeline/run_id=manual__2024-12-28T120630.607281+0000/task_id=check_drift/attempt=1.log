@@ -1,0 +1,90 @@
+[2024-12-28T12:06:32.677+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-28T12:06:32.693+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: xgboost_drift_pipeline.check_drift manual__2024-12-28T12:06:30.607281+00:00 [queued]>
+[2024-12-28T12:06:32.701+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: xgboost_drift_pipeline.check_drift manual__2024-12-28T12:06:30.607281+00:00 [queued]>
+[2024-12-28T12:06:32.702+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2024-12-28T12:06:32.716+0000] {taskinstance.py:2889} INFO - Executing <Task(BranchPythonOperator): check_drift> on 2024-12-28 12:06:30.607281+00:00
+[2024-12-28T12:06:32.723+0000] {standard_task_runner.py:72} INFO - Started process 286 to run task
+[2024-12-28T12:06:32.726+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'xgboost_drift_pipeline', 'check_drift', 'manual__2024-12-28T12:06:30.607281+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/train_xgboost_pipeline.py', '--cfg-path', '/tmp/tmpdgk6m4wc']
+[2024-12-28T12:06:32.730+0000] {standard_task_runner.py:105} INFO - Job 39: Subtask check_drift
+[2024-12-28T12:06:32.745+0000] {logging_mixin.py:190} WARNING - /usr/local/lib/python3.10/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-12-28T12:06:32.786+0000] {task_command.py:467} INFO - Running <TaskInstance: xgboost_drift_pipeline.check_drift manual__2024-12-28T12:06:30.607281+00:00 [running]> on host 42dc6dafdabb
+[2024-12-28T12:06:32.869+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='xgboost_drift_pipeline' AIRFLOW_CTX_TASK_ID='check_drift' AIRFLOW_CTX_EXECUTION_DATE='2024-12-28T12:06:30.607281+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-28T12:06:30.607281+00:00'
+[2024-12-28T12:06:32.871+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-28T12:06:32.905+0000] {baseoperator.py:421} WARNING - BranchPythonOperator.execute cannot be called outside TaskInstance!
+[2024-12-28T12:06:32.907+0000] {train_xgboost_pipeline.py:763} INFO - Checking for drift...
+[2024-12-28T12:06:33.109+0000] {train_xgboost_pipeline.py:674} INFO - Downloaded data/Ingestion/Financial_with_Sentiment.csv from MinIO to /tmp/Financial_with_Sentiment.csv
+[2024-12-28T12:06:33.134+0000] {train_xgboost_pipeline.py:674} INFO - Downloaded data/Ingestion/Financial_with_Sentiment_pseudo.csv from MinIO to /tmp/Financial_with_Sentiment_pseudo.csv
+[2024-12-28T12:06:33.892+0000] {logging_mixin.py:190} WARNING - /app/dags/train_xgboost_pipeline.py:772 DtypeWarning: Columns (2161) have mixed types. Specify dtype option on import or set low_memory=False.
+[2024-12-28T12:06:34.042+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/operators/python.py", line 274, in execute
+    return self.do_branch(context, super().execute(context))
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/app/dags/train_xgboost_pipeline.py", line 787, in check_drift
+    drift_report = Report(metrics=[DataDriftPreset()])
+NameError: name 'Report' is not defined
+[2024-12-28T12:06:34.068+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=xgboost_drift_pipeline, task_id=check_drift, run_id=manual__2024-12-28T12:06:30.607281+00:00, execution_date=20241228T120630, start_date=20241228T120632, end_date=20241228T120634
+[2024-12-28T12:06:34.090+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-28T12:06:34.091+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 39 for task check_drift (name 'Report' is not defined; 286)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/usr/local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/usr/local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/usr/local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/operators/python.py", line 274, in execute
+    return self.do_branch(context, super().execute(context))
+  File "/usr/local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/app/dags/train_xgboost_pipeline.py", line 787, in check_drift
+    drift_report = Report(metrics=[DataDriftPreset()])
+NameError: name 'Report' is not defined
+[2024-12-28T12:06:34.146+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-12-28T12:06:34.170+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-28T12:06:34.173+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
