@@ -4,7 +4,7 @@
 
 **Hình: Kiến trúc hệ thống**
 
-Kiến trúc hệ thống của em bao gồm các mô-đun thu thập, lưu trữ, xử lý, dự báo và trực quan-đánh giá dữ liệu. Các thành phần và luồng dữ liệu được mô tả trong hình trên.
+Kiến trúc hệ thống bao gồm các mô-đun thu thập, lưu trữ, xử lý, dự báo và trực quan-đánh giá dữ liệu. Các thành phần và luồng dữ liệu được mô tả trong hình trên.
 
 ---
 
